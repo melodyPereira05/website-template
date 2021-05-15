@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR,'static')  #useful while deploying project 
 
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'Auction/static')   #python manage.py help, python manage.py collectstatic
+    os.path.join(BASE_DIR,'csiwebsite/static')   #python manage.py help, python manage.py collectstatic
 ]
 
 #Media url
