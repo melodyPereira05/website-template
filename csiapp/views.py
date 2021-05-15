@@ -17,7 +17,7 @@ def aboutus(request):
 
 
 def contactus(request):
-    return render(request,'contactus.html')
+    return render(request,'contact-us.html')
 
 
 
@@ -25,7 +25,7 @@ def events(request):
     return render(request,'events.html')
 
 
-def eventdetails(request):
+def eventdetails(request,id):
     return render(request,'event-detail.html')
 
 def team(request):
