@@ -8,6 +8,7 @@ class Member(models.Model):
         ('scom','Scom'),
         ('jcom','Jcom')
     )
+    seq=models.IntegerField()
     full_name=models.CharField(max_length=200)
     designation=models.CharField(max_length=200)
     member_type=models.CharField(max_length=10,choices=STATUS_CHOICES,default='jcom')
@@ -26,8 +27,8 @@ class Member(models.Model):
 class Event(models.Model):
     event_name=models.CharField(max_length=200)
     description=models.CharField(max_length=1000)
-    start_date=models.CharField(max_length=200)
-    end_date=models.CharField(max_length=200)
+    start_date=models.CharField(max_length=200,blank=True)
+    end_date=models.CharField(max_length=200,blank=True)
     main_photo=models.ImageField(upload_to='photos/main/%Y/%m/%d/')
     photo1=models.ImageField(upload_to='photos/optional/%Y/%m/%d/',blank=True)
     photo2=models.ImageField(upload_to='photos/optional/%Y/%m/%d/',blank=True)
@@ -39,10 +40,22 @@ class Event(models.Model):
     photo8=models.ImageField(upload_to='photos/optional/%Y/%m/%d/',blank=True)
     #countdown timer when next event starts
     
+    def __str__(self):
+        return self.event_name
     
+class Subscribe(models.Model):
+    email=models.EmailField()
+
+    def __str__(self):
+        return self.email
     
-    # class Subscribe(models.Model):
-    #     email=models.EmailField()
+   
+class Contact(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.CharField(max_length=50,blank=True)
+    subject=models.CharField(max_length=200)
+    description=models.CharField(max_length=1000)
+    phone_number=models.CharField(max_length=15)
     
-    # def __str__(self):
-    #     return self.email
+    def __str__(self):
+        return self.name

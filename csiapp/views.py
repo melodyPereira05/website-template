@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Event,Member
 
 
 
@@ -25,7 +25,7 @@ def events(request):
     return render(request,'events.html')
 
 
-def eventdetails(request,id):
+def eventdetails(request,name_slug):
     return render(request,'event-detail.html')
 
 def team(request):

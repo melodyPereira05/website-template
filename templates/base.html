@@ -46,11 +46,11 @@
   
         <nav id="navbar" class="navbar" >
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{% url 'csitsec:home' %}">Home</a></li>
+            <li><a href="{% url 'csitsec:aboutus' %}">About Us</a></li>
+            <li><a href="{% url 'csitsec:event' %}">Events</a></li>
+            <li><a href="{% url 'csitsec:team' %}">Team</a></li>
+            <li><a href="{% url 'csitsec:contactus' %}">Contact Us</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
